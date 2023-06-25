@@ -73,11 +73,13 @@ else
     <meta name="description" content="Adopcja psów">
     <meta name="keywords" content="Psy, Koty, Schronisko, Adopcja, Ogłoszenie, Nowy dom">
     <link rel="icon" href="#">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Ogłoszenia o Adopcji</title>
 </head>
 <body>
-
+<div class="container-fluid">
+  <div class="row">
 <div id="banner">
     <a href="/Adopcja"><i><h2>Ogłoszenia adopcji</h2></i></a>
     <?php
@@ -94,10 +96,16 @@ else
     }
     ?>
 </div>
-<div id="container">
+  </div>
+  <div class="row">
+<div class="container">
+<div class="row">
   <div id="search">
     <h1>Znajdź zwierzaka</h1><hr>
     <form method="post">
+  <div class="row">
+
+    <div class="col-sm-12 col-md 4 col-lg-3 col-xl-2">
       <div class="search">
     <p>Imię:</p>
       <input type="text" name="name" placeholder="Imię" value="<?php
@@ -108,6 +116,8 @@ else
     }
     ?>">
     </div>
+  </div>
+  <div class="col-sm-12 col-md 4 col-lg-3 col-xl-2">
     <div class="search">
      <p> Typ:</p>
       <select name="type">
@@ -134,6 +144,8 @@ else
     ?>>Pies</option>
       </select>
   </div>
+  </div>
+  <div class="col-sm-12 col-md 4 col-lg-3 col-xl-2">
   <div class="search">
   <p> Płeć:</p>
       <select name="sex">
@@ -160,6 +172,8 @@ else
     ?>>Samica</option>
       </select>
   </div>
+  </div>
+  <div class="col-sm-12 col-md 4 col-lg-3 col-xl-2">
   <div class="search">
   <p> Wiek:</p>
       <select name="age">
@@ -206,6 +220,8 @@ else
     ?>>Powyżej 10 lat</option>
       </select>
   </div>
+  </div>
+  <div class="col-sm-12 col-md 4 col-lg-3 col-xl-2">
   <div class="search">
     <p> Przed: </p>
       <input type="date" name="date" value="<?php
@@ -216,8 +232,10 @@ else
     }
     ?>">
     </div>
+  </div>
+  <div class="col-lg-1">
     <div class="search">
-      <label for="name"> <p>Aktualne:</p> </label>
+      <label for="name"> Aktualne:</label>
       <input type="checkbox" name="active" <?php
       if(isset($_SESSION['active']))
       {
@@ -229,10 +247,17 @@ else
   }
     ?>>
     </div>
+</div>
+<div class="col-lg-1">
       <button type="submit"><b>SZUKAJ</b></button>
+</div>
     </form>
-    <hr>
+
+</div>
+<hr>
   </div>
+</div>
+<div class="row">
   <div id="annoucements">
 <?php
 if(isset($_POST['type']))
@@ -244,11 +269,12 @@ else
     $q = $sql -> query("Select * from zwierzeta order by date desc;");
 }
 $results = 0;
+echo '<div class="row">';
 while($l = $q -> fetch_assoc())
 {
   if( $_SESSION['page']*9 <= $results&&$results<9+9*$_SESSION['page'])
   {
-    echo '<a href="Ogloszenie?id='.$l['id'].'">';
+    echo '<div class="col-12 col-md-6 col-xl-4">';
     if($l['Active']==false)
     {
       echo '<div class="notactive">';
@@ -257,18 +283,20 @@ while($l = $q -> fetch_assoc())
     {
     echo '<div class="window">';
     }
+    echo '<a href="Ogloszenie?id='.$l['id'].'">';
+
     echo '<img src="img/zwierzeta/'.$l['Source'].'" <p><h1>'.$l['Name'].'</h1></p>';
     echo '<p>'.$l['Sex'].'</p>';
     echo '<p>Lat: '.$l['Age'].'</p>';
-    echo '<p> Data publikacji: '.$l['Date'].'</p></div></a>';
+    echo '<p> Data publikacji: '.$l['Date'].'</p></a></div></div>';
   }
   $results++;
 }
-echo  '<div id="page">';
+echo  '</div><div id="page">';
   echo '<a href="php/deai.php"><button ';
 if($_SESSION['page']==0)
 {
-  echo 'style="visibility: hidden;"';
+  echo 'style="visibility: hidden;" disabled';
 }
 echo '>Poprzednia</button></a>';
 echo  ' Strona: '.($_SESSION['page']+1);
@@ -278,6 +306,9 @@ echo '</div>';
 ?>
 </div>
 </div>
+</div>
+</div>
+<div class="row">
 <div id="footer">
 <h3>Zaadoptuj zwierzaka już dziś!</h3>
 <form method="post">
@@ -290,13 +321,11 @@ echo '</div>';
   {
     $email = $_POST['newsletter'];
   $q = $sql -> query("Select Email from newsletter where Email='$email';");
-  $email1 = filter_var($email,FILTER_SANITIZE_EMAIL);
-
   if($q -> num_rows > 0)
   {
     echo '<p><span class="red"> Taki e-mail jest już zapisany </span> </p>';
   }
-  else if ($email != $email1 || filter_var($email,FILTER_VALIDATE_EMAIL)==false)
+  else if(!(filter_var($email,FILTER_VALIDATE_EMAIL)))
   {
     echo '<p><span class="red" style="padding-top: 0;"> Adres e-mail jest nieprawidłowy! </span> </p>';
   }
@@ -318,5 +347,7 @@ echo '</div>';
   $sql -> close();
 ?>
 </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 </body>
 </html>
