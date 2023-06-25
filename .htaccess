@@ -1,0 +1,18 @@
+### PROTECT FILES ###
+<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteRule Adopcja index.php
+RewriteRule Zaloguj signin.php
+RewriteRule Zarejestruj signup.php
+RewriteRule Potwierdz accept.php
+RewriteRule Wyloguj logout.php
+RewriteRule Zmiana-hasla passwdchg.php
+RewriteRule Nowe-haslo newpasswd.php
+RewriteRule Ogloszenie anon.php
+RewriteRule Panel panel.php
+RewriteRule ^id/([0-9]+)/$ index.php?type=id [L]
+ErrorDocument 404 /errors/404.html
