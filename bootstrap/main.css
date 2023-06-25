@@ -1,0 +1,329 @@
+*
+{
+    margin: 0;
+}
+body
+{
+  background-color: #29252b;
+}
+.cls
+{
+  clear: both;
+}
+@media only screen and (max-width:1000px){
+	#search, #annoucements {
+    width: 100%;
+  }
+}
+input, select
+{
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 150px !important;
+}
+input:focus, select:focus, input:hover, select:hover
+{
+  background-color: #39343e;
+}
+button
+{
+  background-color: #7f18f8;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-left: 9px;
+  margin-right: 9px;
+  padding: 6px;
+}
+button:hover, input[type=checkbox]:hover
+{
+  cursor: pointer;
+  background-color: #340966;
+}
+#banner
+{
+  background-color: #471a5e;
+  width: 100%;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+#banner a
+{
+  text-decoration: none;
+}
+#banner a:visited
+{
+  text-decoration: none;
+}
+#banner p
+{
+  float: right;
+  margin-top: 0.3%;
+}
+#banner button, #banner h3
+{
+  float: right;
+  margin-right: 40px;
+  padding: 6px;
+}
+h2
+{
+  padding-top: 10px;
+  font-size: 50px;
+  color: white;
+  letter-spacing: 5px;
+  font-family: sans-serif;
+}
+.container
+{
+  width: 60%;
+ background-color: #29252b;
+ height: auto;
+}
+#search
+{
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+.search
+{
+  margin-left: 7px;
+}
+.search p
+{
+  margin-left: 5px;
+}
+form
+{
+  padding: 20px;
+}
+select
+{
+  width: 200px;
+  height: 22px;
+}
+#annoucements
+{
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#annoucements img
+{
+  border-radius: 11px;
+  height: 300px;
+  width: 100%;
+}
+.window, .notactive
+{
+  border: 3px solid white;
+  border-radius: 15px;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  margin: 0 4% 20px 4%;
+  height: auto;
+  width: 100%;
+}
+.window h1, .notactive h1
+{
+  text-align: left;
+  margin-left: 5px;
+}
+.window
+{
+  border: 3px solid white;
+}
+.notactive
+{
+  filter: grayscale(100%);
+  border: 3px solid gray;
+}
+#page
+{
+  width: 100%;
+  height: 50px;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+#footer
+{
+  background-color: #471a5e;
+  width: 100%;
+  height: 90px;
+  text-align: center;
+  z-index: 0;
+}
+.red
+{
+  width: 100%;
+  color: red;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 2%;
+}
+#green
+{
+  color: green;
+}
+#footer p, form
+{
+  background-color: #471a5e;
+  padding-bottom: 6px;
+}
+h3
+{
+  padding-top: 5px;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  letter-spacing: 3px;
+  font-family: sans-serif;
+}
+/* sign up, sign in */
+#signup, #signin, #passwdchg
+{
+  margin-top: 5%;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: gray;
+  color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 2%;
+}
+#signup p, #signin p, #passwdchg p
+{
+  line-height: 2;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 17px;
+  font-weight: 700;
+}
+#signup input, #signin input, #passwdchg input
+{
+  margin: 0 100% 0 10%;
+  height: 30px;
+  font-size: 17px;
+}
+#signup input[type=checkbox]
+{
+  margin: 0 40% 0 40%;
+}
+#signup button, #signin button, #passwdchg button
+{
+  display: inline-block;
+}
+.buttons
+{
+  width: 170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3%;
+}
+a, a:visited
+{
+  color: white;
+}
+a:hover
+{
+  color: #471a5e;
+}
+#signup span
+{
+  font-size: 11px;
+}
+.button
+{
+  padding: 2%;
+  margin: 2%;
+}
+#anon
+{
+  background-color: gray;
+  width: 80%;
+  margin: 4% auto 4% auto;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding-bottom: 5%;
+}
+.na
+{
+  filter: grayscale(70%);
+   opacity: 0.6;
+}
+#anon img
+{
+  width: 300px;
+  height: 300px;
+  margin: 7%;
+}
+#anon button
+{
+  float: right;
+  margin-right: 15%;
+}
+h4
+{
+  color: #29252b;
+  font-family: sans-serif;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 2%;
+  letter-spacing: 1px;
+}
+#info, #contact p
+{
+  margin: 5%;
+  margin-right: 25%;
+  color: white;
+  font-size: 28px;
+}
+#info
+{
+  float: right;
+}
+#contact p
+{
+  line-height: 0;
+}
+#info h1, .desc
+{
+  font-size: 38px;
+  font-weight: 700;
+  font-family: sans-serif;
+}
+.desc, #contact
+{
+  color: white;
+  margin-left: 4%;
+}
+#info p
+{
+  margin-left: 110%;
+  width: 50%;
+}
+#description
+{
+  color: #29252b;
+  margin: 2% 4% 0 4%;
+  font-size: 18px;
+}
